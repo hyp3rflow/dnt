@@ -144,7 +144,7 @@ Then write a statement like so...
 Deno.readTextFileSync(...);
 ```
 
-...dnt will create a shim file in the output, re-exporting the [@deno/shim-deno](https://github.com/denoland/node_deno_shims) npm shim package and change the Deno global be used as a property of this object.
+...dnt will create a shim file in the output, re-exporting the [@deno/shim-deno](https://github.com/denoland/node_deno_shims) npm shim package and change the Deno global to be used as a property of this object.
 
 ```ts
 import * as dntShim from "./_dnt.shims.js";
@@ -188,7 +188,8 @@ Set any of these properties to `true` (distribution and test) or `"dev"` (test o
 - `prompts` - Shim the global `confirm`, `alert`, and `prompt` functions.
 - `blob` - Shim the `Blob` global with the one from the `"buffer"` module.
 - `crypto` - Shim the `crypto` global.
-- `undici` - Shim `fetch`, `File`, `FormData`, `Headers`, `Request`, and `Response` by using the "undici" package (https://www.npmjs.com/package/undici).
+- `undici` - Shim `fetch`, `File`, `FormData`, `Headers`, `Request`, and `Response` by using the [undici](https://www.npmjs.com/package/undici) package.
+- `webSocket` - Shim `WebSocket` by using the [ws](https://www.npmjs.com/package/ws) package.
 
 #### Custom Shims (Advanced)
 

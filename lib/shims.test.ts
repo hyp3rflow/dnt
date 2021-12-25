@@ -11,6 +11,7 @@ Deno.test("should get when all true", () => {
     blob: true,
     crypto: true,
     undici: true,
+    webSocket: true,
     custom: [{
       package: {
         name: "main",
@@ -27,8 +28,8 @@ Deno.test("should get when all true", () => {
     }],
   });
 
-  assertEquals(result.shims.length, 7);
-  assertEquals(result.testShims.length, 8);
+  assertEquals(result.shims.length, 8);
+  assertEquals(result.testShims.length, 9);
 });
 
 Deno.test("should get when all dev", () => {
@@ -39,10 +40,11 @@ Deno.test("should get when all dev", () => {
     blob: "dev",
     crypto: "dev",
     undici: "dev",
+    webSocket: "dev",
   });
 
   assertEquals(result.shims.length, 0);
-  assertEquals(result.testShims.length, 6);
+  assertEquals(result.testShims.length, 7);
 });
 
 Deno.test("should get when all false", () => {
@@ -53,6 +55,7 @@ Deno.test("should get when all false", () => {
     blob: false,
     crypto: false,
     undici: false,
+    webSocket: false,
   });
 
   assertEquals(result.shims.length, 0);
